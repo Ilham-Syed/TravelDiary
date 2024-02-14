@@ -4,6 +4,7 @@ import 'package:flutter_cubit/widgets/app_large_text.dart';
 
 import '../misc/colors.dart';
 import '../widgets/app_text.dart';
+import 'detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,19 +86,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   itemCount:3,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: const EdgeInsets.only(right: 15,top: 10),
-                      width: 200,
-                      height: 300,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  "img/mountain.jpeg"
-                              ),
-                              fit: BoxFit.cover
-                          )
+                    return GestureDetector(
+                      onTap: () {
+                        // Navigate to DetailPage when tapped
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 15,top: 10),
+                        width: 200,
+                        height: 300,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "img/mountain.jpeg"
+                                ),
+                                fit: BoxFit.cover
+                            )
+                        ),
                       ),
                     );
                   },

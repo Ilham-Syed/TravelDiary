@@ -30,12 +30,6 @@ class _MainPageState extends State<MainPage> {
     setState(() {
       _currentIndex = index;
 
-      if (index == 1) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => DetailPage()),
-        );
-      }
     });
   }
 
@@ -64,7 +58,6 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.apps),
             label: "Home",
-
           ),
 
           BottomNavigationBarItem(
